@@ -41,6 +41,8 @@ router.post('/', (req, res) => {
 //Index route: GET '/shops'
 router.get('/', (req, res) => {
 	Shop.find({}, (err, allShops) => {
+		if (err) console.log(err);
+
 		if (req.session.currentUser) {
 			res.render('shops/index.ejs', {
 				shops : allShops
