@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <% include ../partials/nav.ejs %>
+      <% include ../partials/head.ejs %>
+    </head>
+    <body>
+      <header>
+          <nav>
+              <ul>
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/shops">Shop Index</a>
+                </li>
+              </ul>
+            </nav>
+      </header>
+
+        <div class="container mainNew ">
+          <div class="form-group mb-2 formSize">
+            <h1>Create a new shop!</h1><br/>
+            <form action="/shops" method="POST">
+              Shop Name: <input type="text" class="form-control" name="shopName" /><br/>
+              Description: <textarea class="form-control" name="description" /></textarea><br/>
+              How we do good: <textarea class="form-control" name="socialCause" /></textarea><br/>
+              Website: <input type="text" class="form-control" name="website" /><br/>
+              Image: <input type="text" class="form-control" name="img" /><br/>
+                  <label for="products">Products:</label>
+                    <select name="products" id="products">
+                        <option value="">Choose products</option>
+                            <% for (let i=0; i< products.length; i++) { %>
+                                <option value="<%=products[i]._id%>"><%= products[i].item %></option>
+                            <% } %>
+                    </select><br/>
+              <input type="submit" name="submit" class="btn-custom" value="Create Shop"/>
+            </form>
+          </div>
+        </div>
+
+    <nav>
+        <a href="/shops">Back</a></br>
+    </nav>
+    </body>
+    <footer>
+    </footer>
+</html>

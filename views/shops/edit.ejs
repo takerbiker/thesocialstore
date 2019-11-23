@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ../partials/nav.ejs %>
+        <% include ../partials/head.ejs %>
+    </head>
+    
+    <body>
+        <header>
+                    <nav>
+                        <ul>
+                          <li>
+                            <a href="/">Home</a>
+                          </li>
+                          <li>
+                            <a href="/shops">Shop Index</a>
+                          </li>
+                        </ul>
+                      </nav>
+        </header>
+
+        <div class="container mainNew">
+            <div class="form-group mb-2 formSize">
+                <h1>Edit Shop</h1>
+                <form action="/shops/<%=shop.id%>?_method=PUT" method="POST">
+                    Shop Name: <input type="text" name="shopName" class="form-control" value="<%=shop.shopName%>"/><br/>
+                    Description: <textarea name="description" class="form-control" value="<%=shop.description%>"/><%=shop.description%></textarea>
+                    How we do good: <textarea name="socialCause" class="form-control" value="<%=shop.socialCause%>"/><%=shop.socialCause%></textarea><br/>
+                    Website: <input type="text" name="website" class="form-control" value="<%=shop.website%>"/><br/>
+                    Image: <input type="text" name="img" class="form-control" value="<%=shop.img%>"/> </br>
+                    
+                    <label for="products">Products:</label>
+                    <select name="products" value="<%=shop.products%>">
+                            <% for (let i=0; i< allProducts.length; i++) { %>
+                                <% if (String(allProducts[i]._id)==String(shop.products)) { %>
+                                    <option value="<%=allProducts[i]._id%>" selected><%= allProducts[i].item %></option>
+                                <% } else { %>
+                                    <option value="<%=allProducts[i]._id%>"><%= allProducts[i].item %></option>
+                                <% } %>
+                            <% } %>
+                    </select> 
+                    <input type="submit" class="form-control btn-custom" value="Submit Changes"/>
+                </form>
+            </div>
+        </div>
+
+        <nav>
+            <a href="/shops">Back to Shop Listings</a></br>
+        </nav>
+
+    </body>
+    <footer>
+    </footer>
+</html>

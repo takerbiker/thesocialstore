@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ../partials/nav.ejs %>
+        <% include ../partials/head.ejs %>
+    </head>
+    <body>
+        <div class="container main">
+            <!-- Link to add new shop -->
+            <div class="">
+                <a href="/shops/new">Create a New Shop</a>
+            </div>
+          
+            <!-- To show shops  -->
+            <h3>Shop Directory</h3>
+                <div class="row">
+                    <% for(let i = 0; i < shops.length; i++){ %>
+                        <div class="col-md-4 col-sm-3 col-lg-2">
+                            <!-- <div class="imgSize">  -->
+                                <!-- TO LINK IMAGE TO THE SHOW PAGE -->
+                                <a href="/shops/<%=shops[i].id; %>"> 
+                                <img src="<%=shops[i].img%>" class="img-fluid img-thumb shadow"></a>
+                            <!-- </div> -->
+                            <div class="description">
+                                <h6><%=shops[i].shopName; %></h6>
+                                <!-- <p><%=shops[i].description; %></p> -->
+                                <!-- How we do good: <%=shops[i].socialCause; %></br> -->
+                                <!-- Website: <%=shops[i].website; %></br>  -->
+                                <!-- Products: <img src="<%=shops[i].products; %></br>    -->
+                            </div>
+                        </div>
+                    <% } %>           
+            </div>
+        </div>
+
+        <div>
+        <a href="/">Home</a>
+
+        </div>
+    </body>
+
+    <footer>
+    </footer>
+
+</html>
+

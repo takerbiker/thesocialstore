@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ./partials/head.ejs %>
+    </head>
+    <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">The Social Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/shops">Shops</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products">Products</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About us</a>
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link" href="/sessions/new">Log In</a>
+            </li> 
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="/users/new">Sign Up</a>
+            </li>  -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li> 
+          </ul>
+        </div>
+    </nav>
+
+    <!-- Display Section -->
+            <% if(currentUser) { %>
+              <!-- Display navigation bar -->
+              <nav class="navbar navbar-ot navbar-expand-md navbar-dark bg-custom fixed-top">
+                  <a class="navbar-brand" href="/">The Social Store</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                
+                  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav  ml-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/shops">Shops</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/products">Products</a>
+                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/about">About us</a>
+                      </li>  
+                      <li class="nav-item">
+                          <form action="/sessions?_method=DELETE" method="POST">
+                            <button type="submit" value="Log out" class="btn btn-link navbar-btn nav-link btn-logout background"/>Log Out</button></form>
+                      </li>  
+                    </ul>
+                  </div>
+              </nav>
+            <!-- 
+              <form action="/sessions?_method=DELETE" method="POST">
+                <input type="submit" value="Log out" class=""/>
+            </form> -->
+
+
+              <!-- Display Container Area -->
+              <div class="container-fluid card main " style="width:40rem;">
+                <div class="card-body">
+                <h1>Hi <%=currentUser.username%>!</h1> 
+                <p>What would you like to do today?</p>
+                  <div class="buttonContainer">
+                    <a href="/shops/" class="btn btn-secondary btn-lg btn-custom" role="button" aria-pressed="true">Edit Shops</a>
+                    <a href="/products/" class="btn btn-secondary btn-lg btn-custom" role="button" aria-pressed="true">Edit Products</a></br>
+                  </div>
+                <form action="/sessions?_method=DELETE" method="POST">
+                    <input type="submit" value="Log out" class="btn btn-secondary btn-lg "/>
+                </form>
+                </div>
+              </div>        
+                <% } else { %>
+                  <div class="jumbotron jumbo1">
+                      <div class="container">
+                          <h1 class="display-3 mindful">Mindful Shopping</h1>
+                          <div class="container words">
+                            <p class="wiseWords">If you love shopping and just can't stop, why not shop for a good cause?
+                              At the Social Store, you can shop with over 30 of our retail partners, who are all also social enterpises. Now, you can feel good when you shop! </p>
+                          </div>
+                          <a class="btn btn-primary btn-custom btn-lg" href="/about" role="button">About us</a>
+                          <a class="btn btn-primary btn-custom btn-lg" href="/shops" role="button">Shops</a> 
+                      </div>
+                  </div>   
+                <% } %>
+    </body>
+</html>

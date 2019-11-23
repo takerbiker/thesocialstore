@@ -1,0 +1,202 @@
+* {
+	text-align: center;
+
+	/* overflow: hidden; */
+	/* padding: 5px; */
+}
+
+body {
+	font-family: 'Jomolhari', serif;
+	/* font-family: 'Aleo', serif; */
+	/* margin: 0;
+	padding: 0; */
+	/* max-height: 100vh; */
+}
+
+/* Navigation */
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+	text-align: right;
+	font-family: 'Aleo', serif;
+	font-size: 1.2em;
+}
+
+.navbar-dark .navbar-ot .navbar-nav .nav-link {
+	color: white;
+	text-align: right;
+}
+
+/* For the navigation brand */
+.navbar-dark .navbar-brand {
+	color: white;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 2rem;
+}
+
+.btn-logout {
+	width: 100%;
+	padding: 2px 0px !important;
+	text-align: right !important;
+}
+
+.bg-custom {
+	background-color: rgb(61, 92, 172);
+}
+
+.navbar-collapse .navbar-nav {
+	/* display: inline-block; */
+	text-align: center;
+	/* margin: auto; */
+}
+
+.background {
+	background-color: rgb(61, 92, 172);
+}
+
+.jumbo1 {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../img/eaton.jpg);
+	background-position: 10% 30%;
+	background-size: cover;
+	/* opacity: 80%; */
+	/* min-height: 300px; */
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+
+.jumbo2 {
+	background: url(../../img/shutter.jpg) center;
+	background-size: contain;
+	padding-bottom: 30%;
+}
+
+main {
+	margin-top: 100px;
+}
+
+.sty {
+	font-family: 'Jomolhari', serif;
+}
+
+.mindful {
+	color: white;
+	font-family: 'Permanent Marker', cursive;
+}
+
+.buttonContainer {
+	padding: 5px;
+}
+
+.btn {
+	margin: 5px;
+}
+
+.buttonContainer {
+	margin: 15px;
+}
+
+/* 
+.smallerContainer {
+	background-color: pink;
+	margin: 1px;
+	padding: 2px;
+} */
+
+.main {
+	margin-top: 80px;
+}
+
+.words {
+	display: block;
+	max-width: 900px;
+	margin-top: 10px;
+	font-size: 1.3rem;
+	color: white;
+}
+
+.words2 {
+	display: block;
+	max-width: 900px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-size: 1.4rem;
+	color: black;
+}
+
+.wiseWords {
+	/* background-color: rgba(19, 3, 3, 0.6); */
+	font-family: 'Jomolhari', serif;
+}
+
+.card-img-top {
+	max-width: 600px;
+}
+
+.imgSize {
+	max-width: 300px;
+	max-height: 300px;
+	display: block;
+	margin: 0;
+}
+
+.img-thumb {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	/* border-radius: 28px; */
+}
+
+.imgAbout {
+	width: 900px;
+	max-height: 500px;
+	object-fit: cover;
+}
+
+/* .blue {
+	color: rgb(61, 92, 172);
+} */
+
+.imgMedium {
+	width: 500px;
+	height: 500px;
+	object-fit: cover;
+}
+
+.displayArea {
+	padding-top: 10px;
+}
+
+.titlr {
+	font-family: 'Aleo', serif;
+}
+
+.showDescription {
+	padding-top: 5px;
+	margin: 35px;
+	text-align: center;
+	list-style: none;
+}
+
+.description {
+	padding-top: 5px;
+}
+
+.mainNew {
+	display: block;
+	padding-top: 25px;
+}
+
+.formSize {
+	width: 50%;
+	margin: auto;
+}
+
+.btn-custom {
+	background-color: rgb(61, 92, 172);
+	border-color: rgb(61, 92, 172);
+	color: white;
+	margin: 2px;
+}
+
+a {
+	color: rgb(61, 92, 172);
+}

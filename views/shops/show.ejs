@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ../partials/nav.ejs %>
+        <% include ../partials/head.ejs %>
+    </head>
+    <body>
+        <div class="container-fluid main">
+            <h1>Shop Profile</h1>
+            <div class="row displayArea">
+                <div class="col-sm">
+                    <img src="<%=shop.img%>" class="img-fluid imgMedium"></br>
+                </div>
+                <div class="col-sm showDescription">
+                    <h3><%= shop.shopName %></h3>
+                    <p>Description: <%= shop.description %></p>
+                    <p>How we do good: <%= shop.socialCause %></p>
+                        Products:
+                        <li>
+                            <% for (let i=0; i< shop.products.length; i++) { %>
+                            <i><%= shop.products[i].item %></i>
+                            <% } %>
+                        </li></br>
+                    <a href="<%=shop.website%>"><p>Website</p></a>
+
+
+                    <div class="buttonContainer editB">
+                        <!-- Edit button -->
+                        <form action="/shops/<%=shop.id; %>/edit">
+                            <input type="submit" class="form-control btn-custom" value="Edit"/>
+                        </form>
+                        <!-- Delete button -->
+                        <form action="/shops/<%=shop.id; %>?_method=DELETE" method="POST">
+                            <input type="submit" class="form-control btn-custom" value="DELETE"/>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <a href="/shops">Back to Shop Listings</a></br>
+        </nav>
+    </body>
+    <footer>
+    </footer>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% include ../partials/nav.ejs %>
+		<% include ../partials/head.ejs %>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/products">Products Index</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="container mainNew "">
+			<div class="form-group mb-2 formSize">
+				<h1>Create a Product</h1>
+				<form action="/products" method="post">
+					<input type="text" class="form-control" placeholder="item" name="item" /><br/>
+					<textarea name="description" class="form-control" placeholder="description" name="description"></textarea><br/>
+					<input type="number" class="form-control" placeholder="price" name="price" /><br/>
+					<input type="text" class="form-control" placeholder="img url" name="img" /><br/>
+					<label for="shop">Shop Name:</label>
+                    <select name="shop" id="shop">
+						<option value="">Choose shop</option>
+                            <% for (let i=0; i< allShops.length; i++) { %>
+                                <option value="<%=allShops[i]._id%>"><%= allShops[i].shopName %></option>
+                            <% } %>
+					</select></br>
+					<input type="submit" class="btn btn-primary btn-custom" value="Create Product"/>
+				</form>
+			</div>
+		</div>
+	</body>
+	<nav>
+	</nav>
+</html>

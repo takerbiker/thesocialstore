@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% include ../partials/head.ejs %>
+	</head>
+	<body>
+		<nav class="navbar navbar-ot navbar-expand-md navbar-dark bg-custom fixed-top">
+					<a class="navbar-brand" href="/">The Social Store</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+					  <span class="navbar-toggler-icon"></span>
+					</button>
+				  
+					<div class="collapse navbar-collapse text-center" id="navbarsExampleDefault">
+					  <ul class="navbar-nav ml-auto text-center">
+						<li class="nav-item text-center">
+						  <a class="nav-link" href="/shops">Shops<span class="sr-only">current</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/products">Products</a>
+						  </li>
+						<li class="nav-item ">
+						  <a class="nav-link" href="/about">About us</a>
+						</li>  
+						<!-- <li class="nav-item">
+							<form action="/sessions?_method=DELETE" method="POST">
+							  <button type="submit" value="Log out" class="btn btn-link navbar-btn nav-link btn-logout background"/>Log Out</button>
+							</form>
+						</li>   -->
+						<li class="nav-item">
+							<a class="nav-link" href="/sessions/new">Log In</a>
+						</li>   
+					  </ul>
+					  <!-- <form class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+						<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+					  </form> -->
+					</div>
+		</nav>	
+        <div class="container main">
+			<!-- Link to add new product -->
+			<div class="">
+				<!-- <a href="/products/new">Create a new Product</a> -->
+			</div>
+			</br>
+			<!-- To show Products -->
+			<h3>List of Products</h3>
+			</br>
+				<div class="row">
+					<% for(let i = 0; i < products.length; i++){ %>
+					   <div class="col-md-4 col-sm-3 col-lg-2">
+						   <!-- <div class="imgSize">  -->
+							   <!-- TO LINK IMAGE TO THE SHOW PAGE -->
+							   <a href="/products/<%=products[i].id; %>"> 
+							   <img src="<%=products[i].img%>" class="img-fluid img-thumb shadow"></a></br>
+						   <!-- </div>     -->
+							<div class="description">
+							   <h6><%=products[i].item%></h6>
+							   <p>$<%=products[i].price;%></p>
+								<!-- <p><%=products[i].description; %></p></br> -->
+
+						   </div>
+					   </div>
+					<% } %>           
+			   </div>
+		</div>
+		<div>
+			<a href="/">Home</a>
+
+		</div>
+	</body>
+</html>

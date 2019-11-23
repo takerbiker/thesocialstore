@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% include ../partials/nav.ejs %>
+		<% include ../partials/head.ejs %>
+	</head>
+	<body>
+        <div class="container main">
+			<!-- Link to add new product -->
+			<div class="">
+				<a href="/products/new">Create a new Product</a>
+			</div>
+
+			<!-- To show Products -->
+            <h3>List of Products</h3>
+				<div class="row">
+					<% for(let i = 0; i < products.length; i++){ %>
+					   <div class="col-md-4 col-sm-3 col-lg-2">
+						   <!-- <div class="imgSize">  -->
+							   <!-- TO LINK IMAGE TO THE SHOW PAGE -->
+							   <a href="/products/<%=products[i].id; %>"> 
+							   <img src="<%=products[i].img%>" class="img-fluid img-thumb shadow"></a></br>
+						   <!-- </div>     -->
+							<div class="description">
+							   <h6><%=products[i].item%></h6>
+							   <p>$<%=products[i].price;%></p>
+								<!-- <p><%=products[i].description; %></p></br> -->
+
+						   </div>
+					   </div>
+					<% } %>           
+			   </div>
+		</div>
+		<div>
+			<a href="/">Home</a>
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% include ../partials/nav.ejs %>
+		<% include ../partials/head.ejs %>
+	</head>
+	<body>
+		<header>
+                    <nav>
+                        <ul>
+                          <li>
+                            <a href="/">Home</a>
+                          </li>
+                          <li>
+                            <a href="/products">Product Index</a>
+                          </li>
+                        </ul>
+                      </nav>
+        </header>
+
+		<div class="container mainNew">
+			<div class="form-group mb-2 formSize">
+				<h2>Edit Product Listing</h2>
+				<form action="/products/<%=product._id%>?_method=PUT" method="post">
+					Item: <input type="text" name="item" class="form-control" placeholder="item" value="<%=product.item%>"/><br/>
+					Description: <textarea name="description" class="form-control" placeholder="description" ><%=product.description%></textarea><br/>
+					Price: $<input type="number" name="price" class="form-control" placeholder="price"  value="<%=product.price%>"/><br/>
+					Image url:<input type="text" name="img" class="form-control" placeholder="img"  value="<%=product.img%>"/><br/>
+					<label for="shop">Shop Name:</label>
+					<select name="shop" value="<%product.shop%>">
+							<% for (let i=0; i< allShops.length; i++) { %>
+								<% if (String(allShops[i]._id)===String(product.shop)) { %>
+                                    <option value="<%= allShops[i]._id%>" selected><%= allShops[i].shopName %></option> 
+                                <% } else { %>
+									<option value="<%=allShops[i]._id%>"><%= allShops[i].shopName %></option>
+                                <% } %>
+                            <% } %>
+					</select> 
+					<input type="submit" class="form-control btn-custom" value="Submit Changes"/>
+				</form>
+			</div>
+		</div>
+		
+
+		<nav>
+			<a href="/products">Back to Product Listings</a></br>
+		</nav>
+	</body>
+</html>
